@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Build Pregame Analytics caches for Gigantes del Cibao (advance scouting reports).
+Build Pregame Analytics caches for Senadores de San Juan (advance scouting reports).
 
 Outputs in data/:
   pregame_lineup_spots.json
@@ -25,20 +25,20 @@ OUT = Path(__file__).resolve().parent / "data"
 UA = {"User-Agent": "SanJuanAnalytics/1.0"}
 FOCUS_TEAM_ID = 4087
 TEAM_ABBREV = {
-    667: "AGU",
-    668: "Toros del Este",
-    669: "EST",
-    670: "Gigantes del Cibao",
-    671: "ESC",
-    672: "LIC",
+    685: "SAN",
+    686: "CAG",
+    687: "CAR",
+    688: "MAY",
+    689: "PON",
+    4087: "SJU",
 }
-LIDOM_TEAMS = {
-    667: "Águilas Cibaeñas",
-    668: "Toros del Este",
-    669: "Estrellas Orientales",
-    670: "Gigantes del Cibao",
-    671: "Leones del Escogido",
-    672: "Tigres del Licey",
+LBPRC_TEAMS = {
+    685: "Cangrejeros de Santurce",
+    686: "Criollos de Caguas",
+    687: "Gigantes de Carolina",
+    688: "Indios de Mayaguez",
+    689: "Leones de Ponce",
+    4087: "Senadores de San Juan",
 }
 PS_BASE = "https://oriolebird.pythonanywhere.com"
 
@@ -657,9 +657,9 @@ def fetch_people(ids: list[int]) -> dict[int, dict]:
 
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
-    rosters = json.loads((OUT / "lidom_2025_rosters.json").read_text())
-    hitting = json.loads((OUT / "lidom_2025_hitting.json").read_text())
-    pitching = json.loads((OUT / "lidom_2025_pitching.json").read_text())
+    rosters = json.loads((OUT / "lbprc_2025_rosters.json").read_text())
+    hitting = json.loads((OUT / "lbprc_2025_hitting.json").read_text())
+    pitching = json.loads((OUT / "lbprc_2025_pitching.json").read_text())
 
     focus_hitters = {
         int(p["id"]): p["name"]
@@ -728,7 +728,7 @@ def main() -> None:
     print("stuff rows", len(stuff))
 
     print("building spray charts…")
-    # Focus spray on opposing LIDOM hitters (advance scouting targets)
+    # Focus spray on opposing LBPRC hitters (advance scouting targets)
     spray_names = {pid: meta["name"] for pid, meta in opp_hitters.items()}
     spray = build_spray_charts(spray_names, people)
     (OUT / "pregame_spray_charts.json").write_text(json.dumps(spray, indent=2))
