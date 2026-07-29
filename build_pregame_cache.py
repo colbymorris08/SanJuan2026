@@ -446,7 +446,11 @@ def build_opposing_stuff(opp_pitchers: dict[int, dict], people: dict) -> list[di
     return out
 
 
-def build_spray_charts(hitter_ids: dict[int, str], people: dict) -> dict:
+def build_spray_charts(
+    hitter_ids: dict[int, str],
+    people: dict,
+    team_by_pid: dict[int, str] | None = None,
+) -> dict:
     """
     MLB: Statcast hc_x/hc_y with nobody-on / RISP / 2-strike splits.
     AAA: NOT available via Statcast (pybaseball returns empty). Prospect Savant
@@ -537,6 +541,7 @@ def build_spray_charts(hitter_ids: dict[int, str], people: dict) -> dict:
             {
                 "name": hitter_ids[pid],
                 "player_id": pid,
+                "team": (team_by_pid or {}).get(pid),
                 "source": "MLB Statcast 2025",
                 "splits": [
                     pack(nobody, "nobody_on"),
@@ -563,6 +568,7 @@ def build_spray_charts(hitter_ids: dict[int, str], people: dict) -> dict:
             {
                 "name": hitter_ids[pid],
                 "player_id": pid,
+                "team": (team_by_pid or {}).get(pid),
                 "level_key": aaa_keys[0],
                 "source": "Prospect Savant directional rates (not true spray)",
                 "pull": blk.get("pull"),
@@ -574,14 +580,24 @@ def build_spray_charts(hitter_ids: dict[int, str], people: dict) -> dict:
         )
         time.sleep(0.1)
 
+    def _avg(key: str) -> float | None:
+        vals = [float(r[key]) for r in aaa_proxies if r.get(key) is not None]
+        return round(sum(vals) / len(vals), 1) if vals else None
+
     return {
         "mlb": mlb_sprays,
         "aaa_proxy": aaa_proxies,
+        "aaa_averages": {
+            "pull": _avg("pull"),
+            "pull_air": _avg("pull_air"),
+            "oppo_air": _avg("oppo_air"),
+        },
         "aaa_spray_available": False,
         "aaa_note": (
             "True spray charts (hc_x/hc_y) with nobody-on / RISP / 2-strike splits are available "
             "for MLB hitters via Statcast. For AAA-only hitters, Statcast returns no rows and "
-            "Prospect Savant only provides directional rates (pull / oppo) — not count or base-state sprays."
+            "Prospect Savant only provides directional rates (pull / oppo) from their most recent "
+            "AAA season — not count or base-state sprays."
         ),
     }
 
@@ -730,7 +746,8 @@ def main() -> None:
     print("building spray charts…")
     # Focus spray on opposing LBPRC hitters (advance scouting targets)
     spray_names = {pid: meta["name"] for pid, meta in opp_hitters.items()}
-    spray = build_spray_charts(spray_names, people)
+    spray_teams = {pid: meta["team"] for pid, meta in opp_hitters.items()}
+    spray = build_spray_charts(spray_names, people, spray_teams)
     (OUT / "pregame_spray_charts.json").write_text(json.dumps(spray, indent=2))
     print("mlb sprays", len(spray["mlb"]), "aaa proxies", len(spray["aaa_proxy"]))
 

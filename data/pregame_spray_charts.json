@@ -14306,7 +14306,8 @@
       "pull_air": 12.8,
       "oppo_air": 22.0,
       "oppo_gb": 8.3,
-      "note": "AAA pitch-by-pitch spray with RISP / 2K splits is not available via Statcast or Prospect Savant public API."
+      "note": "AAA pitch-by-pitch spray with RISP / 2K splits is not available via Statcast or Prospect Savant public API.",
+      "team": "CAG"
     },
     {
       "name": "Yohandy Morales",
@@ -14317,7 +14318,8 @@
       "pull_air": 8.6,
       "oppo_air": 22.0,
       "oppo_gb": 5.2,
-      "note": "AAA pitch-by-pitch spray with RISP / 2K splits is not available via Statcast or Prospect Savant public API."
+      "note": "AAA pitch-by-pitch spray with RISP / 2K splits is not available via Statcast or Prospect Savant public API.",
+      "team": "SAN"
     },
     {
       "name": "Spencer Packard",
@@ -14328,7 +14330,8 @@
       "pull_air": 14.8,
       "oppo_air": 21.7,
       "oppo_gb": 6.1,
-      "note": "AAA pitch-by-pitch spray with RISP / 2K splits is not available via Statcast or Prospect Savant public API."
+      "note": "AAA pitch-by-pitch spray with RISP / 2K splits is not available via Statcast or Prospect Savant public API.",
+      "team": "SAN"
     },
     {
       "name": "Brian Rey",
@@ -14339,7 +14342,8 @@
       "pull_air": 0.0,
       "oppo_air": 11.1,
       "oppo_gb": 0.0,
-      "note": "AAA pitch-by-pitch spray with RISP / 2K splits is not available via Statcast or Prospect Savant public API."
+      "note": "AAA pitch-by-pitch spray with RISP / 2K splits is not available via Statcast or Prospect Savant public API.",
+      "team": "SAN"
     },
     {
       "name": "Max Burt",
@@ -14350,7 +14354,8 @@
       "pull_air": 23.4,
       "oppo_air": 12.8,
       "oppo_gb": 0.0,
-      "note": "AAA pitch-by-pitch spray with RISP / 2K splits is not available via Statcast or Prospect Savant public API."
+      "note": "AAA pitch-by-pitch spray with RISP / 2K splits is not available via Statcast or Prospect Savant public API.",
+      "team": "CAG"
     },
     {
       "name": "Elijah Dunham",
@@ -14361,7 +14366,8 @@
       "pull_air": 0.0,
       "oppo_air": 0.0,
       "oppo_gb": 14.3,
-      "note": "AAA pitch-by-pitch spray with RISP / 2K splits is not available via Statcast or Prospect Savant public API."
+      "note": "AAA pitch-by-pitch spray with RISP / 2K splits is not available via Statcast or Prospect Savant public API.",
+      "team": "CAG"
     },
     {
       "name": "Jonathan Morales",
@@ -14372,7 +14378,8 @@
       "pull_air": 21.1,
       "oppo_air": 16.9,
       "oppo_gb": 5.5,
-      "note": "AAA pitch-by-pitch spray with RISP / 2K splits is not available via Statcast or Prospect Savant public API."
+      "note": "AAA pitch-by-pitch spray with RISP / 2K splits is not available via Statcast or Prospect Savant public API.",
+      "team": "CAG"
     },
     {
       "name": "Willy Vasquez",
@@ -14383,7 +14390,8 @@
       "pull_air": 6.1,
       "oppo_air": 20.7,
       "oppo_gb": 9.8,
-      "note": "AAA pitch-by-pitch spray with RISP / 2K splits is not available via Statcast or Prospect Savant public API."
+      "note": "AAA pitch-by-pitch spray with RISP / 2K splits is not available via Statcast or Prospect Savant public API.",
+      "team": "CAG"
     },
     {
       "name": "Onix Vega",
@@ -14394,7 +14402,8 @@
       "pull_air": 16.7,
       "oppo_air": 16.7,
       "oppo_gb": 5.6,
-      "note": "AAA pitch-by-pitch spray with RISP / 2K splits is not available via Statcast or Prospect Savant public API."
+      "note": "AAA pitch-by-pitch spray with RISP / 2K splits is not available via Statcast or Prospect Savant public API.",
+      "team": "CAG"
     },
     {
       "name": "Gabriel Cancel",
@@ -14405,7 +14414,8 @@
       "pull_air": 28.2,
       "oppo_air": 12.7,
       "oppo_gb": 2.8,
-      "note": "AAA pitch-by-pitch spray with RISP / 2K splits is not available via Statcast or Prospect Savant public API."
+      "note": "AAA pitch-by-pitch spray with RISP / 2K splits is not available via Statcast or Prospect Savant public API.",
+      "team": "PON"
     },
     {
       "name": "Josh Hatcher",
@@ -14416,7 +14426,8 @@
       "pull_air": 0.0,
       "oppo_air": 0.0,
       "oppo_gb": 0.0,
-      "note": "AAA pitch-by-pitch spray with RISP / 2K splits is not available via Statcast or Prospect Savant public API."
+      "note": "AAA pitch-by-pitch spray with RISP / 2K splits is not available via Statcast or Prospect Savant public API.",
+      "team": "CAR"
     },
     {
       "name": "Jacob Berry",
@@ -14427,7 +14438,8 @@
       "pull_air": 14.9,
       "oppo_air": 13.9,
       "oppo_gb": 6.7,
-      "note": "AAA pitch-by-pitch spray with RISP / 2K splits is not available via Statcast or Prospect Savant public API."
+      "note": "AAA pitch-by-pitch spray with RISP / 2K splits is not available via Statcast or Prospect Savant public API.",
+      "team": "PON"
     },
     {
       "name": "Edwin D\u00edaz",
@@ -14438,7 +14450,8 @@
       "pull_air": 23.5,
       "oppo_air": 20.6,
       "oppo_gb": 2.9,
-      "note": "AAA pitch-by-pitch spray with RISP / 2K splits is not available via Statcast or Prospect Savant public API."
+      "note": "AAA pitch-by-pitch spray with RISP / 2K splits is not available via Statcast or Prospect Savant public API.",
+      "team": "PON"
     },
     {
       "name": "D'Shawn Knowles",
@@ -14449,7 +14462,8 @@
       "pull_air": 9.5,
       "oppo_air": 17.5,
       "oppo_gb": 3.2,
-      "note": "AAA pitch-by-pitch spray with RISP / 2K splits is not available via Statcast or Prospect Savant public API."
+      "note": "AAA pitch-by-pitch spray with RISP / 2K splits is not available via Statcast or Prospect Savant public API.",
+      "team": "PON"
     },
     {
       "name": "Juan Montero",
@@ -14460,9 +14474,15 @@
       "pull_air": 0.0,
       "oppo_air": 0.0,
       "oppo_gb": 0.0,
-      "note": "AAA pitch-by-pitch spray with RISP / 2K splits is not available via Statcast or Prospect Savant public API."
+      "note": "AAA pitch-by-pitch spray with RISP / 2K splits is not available via Statcast or Prospect Savant public API.",
+      "team": "PON"
     }
   ],
   "aaa_spray_available": false,
-  "aaa_note": "True spray charts (hc_x/hc_y) with nobody-on / RISP / 2-strike splits are available for MLB hitters via Statcast. For AAA-only hitters, Statcast returns no rows and Prospect Savant only provides directional rates (pull / oppo) \u2014 not count or base-state sprays."
+  "aaa_note": "True spray charts (hc_x/hc_y) with nobody-on / RISP / 2-strike splits are available for MLB hitters via Statcast. For AAA-only hitters, Statcast returns no rows and Prospect Savant only provides directional rates (pull / oppo) \u2014 not count or base-state sprays.",
+  "aaa_averages": {
+    "pull": 28.2,
+    "pull_air": 12.0,
+    "oppo_air": 13.9
+  }
 }
