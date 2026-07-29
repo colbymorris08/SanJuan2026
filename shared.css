@@ -152,6 +152,33 @@ tbody tr:hover { background: #f8fafc; }
   width: 100%; height: 480px; background: #f8fafc;
   border-radius: 6px; border: 1px solid var(--line);
 }
+.spray-hit-legend {
+  margin: 0 0 14px;
+  padding: 10px 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.spray-hit-legend .spray-hit-key {
+  margin: 0;
+  font-size: 13px;
+  gap: 12px 18px;
+}
+.spray-hit-legend .dot {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,0.9);
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.2);
+}
+.spray-hit-legend .swatch {
+  gap: 8px;
+  font-size: 13px;
+}
+.spray-hit-legend .fence-note {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+}
 .legend-row {
   display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center;
   margin: 10px 0 6px; font-size: 12px; color: var(--muted);

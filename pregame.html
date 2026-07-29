@@ -262,6 +262,7 @@
         </select>
       </div>
     </div>
+    <div id="spray-hit-legend" class="spray-hit-legend"></div>
     <div id="spray-mlb" class="spray-grid"></div>
     <div class="section-label" style="margin-top:20px" data-i18n="aaaProxyLabel">AAA directional proxy</div>
     <div class="legend-row" data-i18n-html="colorKeyGreenBlue">
@@ -368,7 +369,7 @@
 <script>
 let CACHE = {}, FPS = {}, sortState = {}, FPS_AVG = { fps: 0.28, fpsRisp: 0.28 };
 const pct = v => v == null ? '—' : (v*100).toFixed(1)+'%';
-const ASSET_V = 'sju3';
+const ASSET_V = 'sju4';
 
 function fpsFor(pid) {
   const row = FPS[String(pid)];
@@ -1008,11 +1009,11 @@ function drawSpray(canvas, points){
     const hit = p.hit || 'BIP';
     const isHR = hit === 'HR';
     ctx.beginPath();
-    ctx.arc(px, py, isHR ? 5.2 : 3.6, 0, Math.PI*2);
+    ctx.arc(px, py, isHR ? 18 : 14, 0, Math.PI*2);
     ctx.fillStyle = HIT_COLORS[hit] || HIT_COLORS.BIP;
     ctx.fill();
-    ctx.strokeStyle = 'rgba(255,255,255,0.85)';
-    ctx.lineWidth = isHR ? 1.4 : 1;
+    ctx.strokeStyle = 'rgba(255,255,255,0.95)';
+    ctx.lineWidth = isHR ? 3 : 2.2;
     ctx.stroke();
   }
 }
@@ -1020,11 +1021,11 @@ function drawSpray(canvas, points){
 function sprayHitLegendHtml(){
   const items = [
     ['HR','#dc2626'],['3B','#ea580c'],['2B','#2563eb'],['1B','#16a34a'],
-    ['OUT','#64748b'],['SF','#94a3b8'],['E','#7c3aed'],
+    ['OUT','#64748b'],['SF','#94a3b8'],['SAC','#a8a29e'],['E','#7c3aed'],['BIP','#0f172a'],
   ];
-  return `<div class="legend-row">${items.map(([lab,col])=>
+  return `<div class="legend-row spray-hit-key">${items.map(([lab,col])=>
     `<span class="swatch"><span class="dot" style="background:${col}"></span>${lab}</span>`
-  ).join('')}<span style="color:var(--muted)">Fence = 400' CF · poles ~330'</span></div>`;
+  ).join('')}<span class="fence-note">Fence = 400' CF · poles ~330'</span></div>`;
 }
 function filteredSprayMlb(){
   const team=document.getElementById('spray-team').value;
@@ -1040,6 +1041,8 @@ function onSprayTeamChange(){
 function renderSpray(){
   const spray=CACHE.spray||{};
   document.getElementById('spray-note').textContent = spray.aaa_note || 'AAA true spray splits unavailable.';
+  const legendEl=document.getElementById('spray-hit-legend');
+  if(legendEl) legendEl.innerHTML = sprayHitLegendHtml();
   const mlb=filteredSprayMlb();
   const sel=document.getElementById('spray-player');
   if(!sel.dataset.ready){
@@ -1057,7 +1060,6 @@ function renderSpray(){
     const f=fpsFor(player.player_id);
     grid.innerHTML = `<div class="spray-card"><h3>${player.name}${player.team?' · '+player.team:''} · ${s?.split||''} · n=${s?.n||0}</h3>
       <canvas id="spray-cv"></canvas>
-      ${sprayHitLegendHtml()}
       <div class="note" style="margin-top:8px">${player.source||''} · FPS% ${pct(f.fps)} · FPS% RISP ${pct(f.fpsRisp)}</div></div>`;
     requestAnimationFrame(()=>drawSpray(document.getElementById('spray-cv'), s?.points||[]));
   }
